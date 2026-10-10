@@ -38,6 +38,7 @@ Write it for a stranger: no "as discussed", no references to the chat.
    - Is there an unfinished Intake checklist? If the section is missing but Phase is Intake, rebuild it from the files that exist.
    - Concretely: compare `git show --stat HEAD` with its message, and look in `git status` for untracked source folders that should have been committed.
    - If the approval mode in `AGENTS.md` is blank, treat it as `ask`.
+   - Did the owner edit the docs since the last session (changes to `docs/` or `AGENTS.md` not made by an agent)? Mention them and follow the new version.
 4. Read only the docs the next action needs.
 5. Reply according to the first message:
    - **A greeting, "continue", "where were we":** three lines (phase, what was last done, next action and anything in flight), then a short **Discrepancies** list if the checklist found any, with numbered questions.

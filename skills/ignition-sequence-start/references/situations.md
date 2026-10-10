@@ -60,6 +60,8 @@ How to handle the cases the main flow does not cover directly. Find the closest 
 
 | Situation | Handling |
 |-----------|----------|
+| The owner wants to change something from setup (goal, design, plan, rules) | Revise (`workflow.md` › Revising earlier decisions). |
+| The owner edited the docs by hand | Their version wins. Mention the change on arrival and follow it. |
 | Requirements change mid-milestone | Update `docs/spec.md` (dated), re-check the milestone's acceptance items, and tell the owner what the change costs before continuing. |
 | A new batch of features after the plan | New scope (`workflow.md` › New scope). |
 | Feedback rounds keep going without sign-off | Status check (`workflow.md` › Sign-off and drift), then fold the decisions back into the spec. |

@@ -31,6 +31,7 @@ Paths in this skill are relative to its own directory, the folder containing thi
 | "Handoff", "wrap up", "switching to another agent", context running low | **Hand off** | `references/handoff.md` › Leaving |
 | "Status", "where are we", "what was skipped" | **Status check** | `references/workflow.md` › Sign-off and drift |
 | A list of fixes or changes after a review | **Review round** | `references/workflow.md` › Feedback rounds |
+| "Change …", "update …": the goal, a feature, the design, the plan, the rules or anything given during setup | **Revise** | `references/workflow.md` › Revising earlier decisions |
 | "New features", a new batch of requirements after the plan | **New scope** | `references/workflow.md` › New scope |
 | "I'll be away", "keep going without me" | **Away mode** | `references/workflow.md` › Away mode |
 | Research, many files or images to read, an audit | **Subagents** | `references/parallel.md` › Subagents |
@@ -91,6 +92,7 @@ You're set up. From here, just talk to me normally. These also work in any agent
   handoff         save progress before closing the chat or switching agents
   1. … 2. …       a numbered list of fixes, each tracked and reported back
   new feature: …  added to the plan before any code
+  change …        update anything from setup: goal, features, design, plan, rules
   help            show this list
 ```
 

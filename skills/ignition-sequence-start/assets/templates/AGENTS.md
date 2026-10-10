@@ -17,7 +17,7 @@ Shared instructions for every coding agent working on {{PROJECT_NAME}}. Keep thi
 Do this before the first task, without being asked:
 
 1. Read `docs/progress.md`: current status, next action, work in flight, decisions, blockers.
-2. Check `git status` and `git log -5`. If git disagrees with `progress.md`, trust git and correct `progress.md`.
+2. Check `git status` and `git log -5`. If git disagrees with `progress.md`, trust git and correct `progress.md`. If the owner edited the docs since the last session, follow their version.
 3. If this file still has template placeholders (names in double curly braces), setup is unfinished: ask the owner to fill them before building.
 4. Read only what the task needs: `docs/product.md`, `docs/spec.md`, `docs/design.md`; `references/README.md` for visual work; `docs/parallel-plan.md` if you are a parallel session.
 5. Orient the owner. For a greeting, "continue" or "where were we": three lines (phase, last done, next action) plus any discrepancies. For a specific task: one line of orientation, then the task.
@@ -29,9 +29,10 @@ Do this before the first task, without being asked:
 | "status", "where are we" | Summarize: phase, signed off, in progress, open feedback IDs, skipped items, questions waiting on the owner. |
 | "handoff", "wrap up", "switching agents" | Update `docs/progress.md` (status, next action, in flight, session log), commit finished work if the approval mode allows, and report anything left uncommitted. |
 | A list of changes or fixes | Add each to `docs/feedback.md` with an ID first, then work through them and report per ID. |
-| New features or a change of direction | Add them to `docs/spec.md` (and `docs/design.md`) with IDs, propose milestones, get approval before building. |
+| New features | Add them to `docs/spec.md` (and `docs/design.md`) with IDs, propose milestones, get approval before building. |
+| "change …", "update …" (goal, a feature, the design, the plan, these rules) | Edit the document where it lives (`docs/product.md`, `docs/spec.md`, `docs/design.md`, `docs/progress.md`, or this file), summarize what changed and what it affects, and get approval if it adds work or reorders the plan. |
 | "I'll be away", "keep going" | Agree the boundary (which IDs, commit mode), stay inside it, queue questions in Blockers, leave a short report. |
-| "help" | List these shortcuts in plain words: continue, status, handoff, a numbered list of fixes, new feature, help. |
+| "help" | List these shortcuts in plain words: continue, status, handoff, a numbered list of fixes, new feature, change, help. |
 
 ## Workflow
 

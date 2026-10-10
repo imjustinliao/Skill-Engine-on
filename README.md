@@ -46,25 +46,30 @@ After setup, just talk to your agent normally. These phrases also work in any ag
 | **handoff** | Saves progress before you close the chat or switch agents |
 | a numbered list of fixes | Each fix is tracked and reported back one by one |
 | **new feature: …** | Added to the plan before any code is written |
+| **change …** | Updates anything from setup, for example *"change the plan: do login first"*, *"update the design: darker colors"*, *"change my rules: commit when tests pass"* |
 | **help** | Shows this list |
 
 That's it. The rest is optional.
 
 ---
 
-## What it adds to your project
+## Your project's docs
 
-A few Markdown files the agent keeps up to date:
+Everything you share during setup is written into plain Markdown files in your project, and the agent keeps them up to date as you build:
 
 ```
-AGENTS.md          rules every agent reads automatically
-docs/progress.md   where things stand and what's next
-docs/spec.md       what you're building, as a checklist
+AGENTS.md          how agents work on this project (read automatically)
+docs/product.md    your goal: what, why, for whom
+docs/spec.md       what it should do, as a checklist
+docs/design.md     how it should look and feel
+docs/progress.md   the plan, where things stand, decisions made
 docs/feedback.md   your requests and their status
-docs/…             goal, design and research notes
+docs/research.md   what was looked into, with sources
 ```
 
-Small projects get only the first four.
+Small projects get only `AGENTS.md`, `spec.md`, `progress.md` and `feedback.md`.
+
+You can read and edit these files yourself at any time. The next agent follows your version.
 
 <details>
 <summary><b>Run several agents in parallel</b></summary>

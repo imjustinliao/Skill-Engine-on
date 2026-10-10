@@ -10,6 +10,7 @@ After the plan is approved, every milestone and every review round goes through 
 - Feedback rounds
 - Commits and approval modes
 - Sign-off and drift
+- Revising earlier decisions
 - New scope
 - Away mode
 - Versioning
@@ -80,6 +81,22 @@ Since the last sign-off: N feedback items done, N open (IDs)
 Skipped or deferred: …
 Waiting on you: numbered questions
 ```
+
+## Revising earlier decisions
+
+Anything the owner gave during setup can change later: the goal, a requirement, the design, the plan, the conventions. Change it where it lives, so every agent sees the new version:
+
+| The owner changes | Update | Then |
+|-------------------|--------|------|
+| The goal, users, non-goals | `docs/product.md` | Check whether the spec or plan still fit; say so if not. |
+| A requirement (reword, remove, reprioritize) | `docs/spec.md`, in place, dated | Re-check the affected milestones' acceptance items. |
+| The look or feel | `docs/design.md` › Design direction, rewritten in place | List screens already built that no longer match, as feedback items or a milestone. |
+| The plan (order, scope, a milestone) | `docs/progress.md` › Milestones | Get approval for the new plan before building on it. |
+| How agents work (approval mode, commit format, branching, commands) | `AGENTS.md` | Apply from the next action on. |
+
+Steps: show the current wording, make the change in the owner's words, summarize what changed and what it affects in two or three lines, and record a dated decision. A change that adds work or reorders the plan needs the owner's yes before code; a wording fix does not.
+
+**The owner edits the docs directly.** That is welcome. On arrival, notice doc changes since the last session (`git log` or `git diff` on `docs/` and `AGENTS.md`), mention them in the status line, and follow the new version.
 
 ## New scope
 
