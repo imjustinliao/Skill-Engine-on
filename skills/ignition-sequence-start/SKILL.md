@@ -36,13 +36,24 @@ Paths in this skill are relative to its own directory, the folder containing thi
 | Research, many files or images to read, an audit | **Subagents** | `references/parallel.md` › Subagents |
 | "Run these in parallel", "give me prompts for other agents" | **Parallel** | `references/parallel.md` |
 | Agent files or docs from another system | **Adopt** (kickoff that merges, never discards) | `references/intake.md` › Existing projects |
+| "Help", "what can I say", "how do I use this" | **Show the cheat sheet** below | — |
 | Anything unusual: monorepo, team, no git, tiny script, limited agent | **Check the edge cases** | `references/situations.md` |
 
 If the situation is still unclear, say what you found and ask.
 
 ## Kickoff
 
-Read `references/intake.md` first. If the owner asks for speed ("express", "skip the questions"), follow its Express kickoff. Otherwise open with one short message: what the setup does, that it runs in steps 0–8 with one question set per message, and that nothing is implemented until the plan is approved. Step 0 writes nothing until the owner says yes.
+Read `references/intake.md` first. If the owner asks for speed ("express", "skip the questions"), follow its Express kickoff.
+
+Otherwise open with a short, plain message that a first-time user understands, then go straight into step 0. For example:
+
+```text
+Ignition sequence start. Before any code, we'll set this up together in a few short steps,
+ending with a plan you approve. Answer in a few words, paste notes you already have, or say
+"skip". First, let me look at what's here.
+```
+
+Every setup message stays short (about 150 words plus at most three numbered questions) and ends with what to type next, with an example answer ("You can reply: yes; just this one"). Avoid internal terms ("intake", "step 0", "scaffold", "pointer file", "stack") unless the owner uses them first. Adapt to the owner's experience (`references/intake.md` › Match the owner): someone new to coding gets plain words, recommended defaults and the short path. Step 0 writes nothing until the owner says yes.
 
 | Step | Ask for | Writes |
 |------|---------|--------|
@@ -65,6 +76,23 @@ Rules for every step:
 - **Gate.** Wait for the owner before the next step. Never implement during intake. Commit and push only with explicit approval.
 
 Scaffold with `python3 scripts/scaffold.py <project-dir> --name "<Name>"`. Options: `--light` for small projects, `--parallel` for parallel-work files, `--gemini` and `--aider` for those agents' pointer files (see `references/docs-system.md`), `--no-claude` to skip `CLAUDE.md` when Claude Code is not used, `--dry-run` to preview without writing anything. It never overwrites. Without Python, copy the files from `assets/templates/` by hand.
+
+When the plan is approved, end setup with the cheat sheet below, so the owner knows how to work from here.
+
+## Cheat sheet
+
+Show this after setup and whenever the owner asks for help, in the owner's language:
+
+```text
+You're set up. From here, just talk to me normally. These also work in any agent:
+
+  continue        pick up where we left off (new chat or another agent)
+  status          where things stand and what's waiting on you
+  handoff         save progress before closing the chat or switching agents
+  1. … 2. …       a numbered list of fixes, each tracked and reported back
+  new feature: …  added to the plan before any code
+  help            show this list
+```
 
 ## After the plan
 

@@ -14,6 +14,7 @@ The intake turns what is in the owner's head (or in their notes) into files any 
 - Step 6: Design and references
 - Step 7: Research
 - Step 8: Milestone plan
+- Match the owner
 - Sizing the setup
 - Express kickoff
 - Existing projects
@@ -21,7 +22,7 @@ The intake turns what is in the owner's head (or in their notes) into files any 
 
 ## How every step works
 
-1. **Ask for one thing.** Say which step this is ("Step 3: the spec", of steps 0–8), what you need, and the two ways to give it: paste what they already have, or answer a few short questions. Prepared documents are welcome; take them whole.
+1. **Ask for one thing.** Say in plain words what this step is about ("Next: what should it do?"), what you need, and the two ways to give it: paste what they already have, or answer a few short questions. Prepared documents are welcome; take them whole.
 2. **Capture faithfully.** Keep the owner's wording and hierarchy. Reorganize for clarity, never for meaning: do not drop, merge away, or "improve" a requirement. Interpretation goes in the Assumptions or Ambiguities table, not into the requirement.
 3. **Ask follow-ups as one numbered batch.** Number every question (`1.`, `2.`, …) and make each answerable in a few words, offering the likely options. Replies are often short and in order ("yes; no, single; later; what you suggest"). Map answers by number, read back any you had to interpret, and treat "what you suggest" as approval of your stated default. File every answer where it belongs before moving on; an answer that never reaches the docs is lost to the next session.
 4. **Write the file, then show a short summary** of what it now says and what is still open.
@@ -102,7 +103,21 @@ Write: `docs/research.md`, and the approved **Design direction** in `docs/design
 
 Propose milestones (`M0` setup, `M1` foundations, then features), each with: scope, requirement IDs, acceptance criteria, how it will be verified, dependencies, and risks. Order them so the first one produces something runnable. Mark which milestones could run in parallel once a shared base and contracts exist (see `parallel.md`), and say what that costs.
 
-**Get explicit approval.** Then set Phase to Building in `docs/progress.md`, remove the Intake section, and start M1 (or the parallel plan).
+**Get explicit approval.** Then set Phase to Building in `docs/progress.md`, remove the Intake section, show the owner the cheat sheet from `SKILL.md`, and start M1 (or the parallel plan) when they say go.
+
+## Match the owner
+
+Read the owner's experience from what they say ("I've never coded", "I'm a designer") and how they answer, and adjust. When unsure, start plain; it is easy to speed up.
+
+**New to coding:**
+
+- Use plain words. "Stack" → "the tools it's built with"; "repo" → "project folder"; "git" → "save history"; "commit" → "save a version"; "push" → "upload to GitHub"; "milestone" → "stage"; "spec" → "feature list"; "agent" → "AI coding tool". Describe files by purpose, not by name.
+- Recommend, don't ask. Propose one simple option with a one-line reason (for a small website: plain HTML, CSS and a little JavaScript, or a site builder), and accept "what you suggest".
+- Offer the short path yourself: the light setup and the express kickoff.
+- Skip what they cannot answer yet: which agents (default: this one), approval mode (default: ask before saving versions), the toolchain check (until the tools are chosen), parallel work.
+- Tell them how they will see progress ("you'll open the site in your browser after each stage").
+
+**Experienced:** the full flow, terse, with technical terms. Ask about stack, conventions and agents directly.
 
 ## Sizing the setup
 

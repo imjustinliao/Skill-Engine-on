@@ -31,6 +31,7 @@ Do this before the first task, without being asked:
 | A list of changes or fixes | Add each to `docs/feedback.md` with an ID first, then work through them and report per ID. |
 | New features or a change of direction | Add them to `docs/spec.md` (and `docs/design.md`) with IDs, propose milestones, get approval before building. |
 | "I'll be away", "keep going" | Agree the boundary (which IDs, commit mode), stay inside it, queue questions in Blockers, leave a short report. |
+| "help" | List these shortcuts in plain words: continue, status, handoff, a numbered list of fixes, new feature, help. |
 
 ## Workflow
 
