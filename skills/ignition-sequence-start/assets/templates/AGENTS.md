@@ -12,13 +12,25 @@ Shared instructions for every coding agent working on {{PROJECT_NAME}}. Keep thi
   - `docs/`: product, spec, design, research, progress.
   - `references/`: screenshots and visual assets for inspiration. Never ship these.
 
-## Start here (every session, every agent)
+## Start of every session (every agent)
+
+Do this before the first task, without being asked:
 
 1. Read `docs/progress.md`: current status, next action, work in flight, decisions, blockers.
-2. Then read what the task needs: `docs/product.md` → `docs/spec.md` → `docs/design.md`; `references/README.md` for UI work; `docs/parallel-plan.md` if you are a parallel session.
-3. Check `git status` and `git log -5`. If git disagrees with `progress.md`, trust git and fix `progress.md`.
-4. If this file still has template placeholders (names in double curly braces), setup is unfinished: ask the owner to fill them before building.
-5. Before changing anything, tell the owner in two or three lines where things stand and what you will do next.
+2. Check `git status` and `git log -5`. If git disagrees with `progress.md`, trust git and correct `progress.md`.
+3. If this file still has template placeholders (names in double curly braces), setup is unfinished: ask the owner to fill them before building.
+4. Read only what the task needs: `docs/product.md`, `docs/spec.md`, `docs/design.md`; `references/README.md` for visual work; `docs/parallel-plan.md` if you are a parallel session.
+5. Orient the owner. For a greeting, "continue" or "where were we": three lines (phase, last done, next action) plus any discrepancies. For a specific task: one line of orientation, then the task.
+
+## Owner shortcuts
+
+| The owner says | Do |
+|----------------|----|
+| "status", "where are we" | Summarize: phase, signed off, in progress, open feedback IDs, skipped items, questions waiting on the owner. |
+| "handoff", "wrap up", "switching agents" | Update `docs/progress.md` (status, next action, in flight, session log), commit finished work if the approval mode allows, and report anything left uncommitted. |
+| A list of changes or fixes | Add each to `docs/feedback.md` with an ID first, then work through them and report per ID. |
+| New features or a change of direction | Add them to `docs/spec.md` (and `docs/design.md`) with IDs, propose milestones, get approval before building. |
+| "I'll be away", "keep going" | Agree the boundary (which IDs, commit mode), stay inside it, queue questions in Blockers, leave a short report. |
 
 ## Workflow
 
@@ -89,7 +101,7 @@ Secrets, tokens, `.env` files, personal signing or machine-specific settings, bu
 Another agent or a fresh session may continue from where you stop, with nothing but these files. Before you stop, or when your context is running low:
 
 1. Update `docs/progress.md` › Current status: phase, next action, and **in flight** (branch, uncommitted files, half-done steps).
-2. Commit finished work, or say exactly what is uncommitted and why.
+2. Commit finished work if the approval mode allows; otherwise, or if work is unfinished, list exactly what is uncommitted and why.
 3. Add one line to the session log.
 
 ## Record keeping

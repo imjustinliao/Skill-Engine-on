@@ -40,7 +40,7 @@ Say yes only if all of these hold:
 
 - The plan is approved and the milestones touch **different files**. Overlap means conflicts, or one milestone silently re-building another's UI.
 - What they share can be pinned down as **contracts** before anyone starts.
-- The machine can take it. Each session runs its own builds, tests, devices or servers; six sessions with their own simulators overloaded a fast laptop in practice. Recommend **2–4 writers**, in waves if there are more.
+- The machine can take it. Each session runs its own builds, tests, devices or servers, and the load adds up quickly. Recommend **2–4 writers**, in waves if there are more.
 - Someone, the coordinator plus the owner, has time to merge and review what comes back.
 
 If not, run milestones one after another, and use subagents for research and review only. Say what you recommend and why; the owner may still choose more. Then make it as safe as you can.
@@ -49,7 +49,7 @@ To size it, check the machine (`nproc` or `sysctl -n hw.ncpu`, and free memory).
 
 ## Asked for prompts before the project is ready
 
-Owners in a hurry often ask for the session prompts straight away. Do not hand out prompts that cannot work; a session without contracts or acceptance criteria will guess, and three sessions guess three different ways. Check readiness, then offer the shortest path to it:
+Session prompts are often requested straight away. Do not hand out prompts that cannot work: a session without contracts or acceptance criteria will guess, and three sessions guess three different ways. Check readiness, then offer the shortest path to it:
 
 - [ ] The milestones are approved and each has acceptance items in `docs/spec.md`.
 - [ ] `AGENTS.md` has real build, test and verify commands (no `{{PLACEHOLDERS}}`).
@@ -66,7 +66,7 @@ Before any session starts, the coordinator puts on the main branch:
 - **Shared foundations** every milestone needs (design tokens, base components, app shell entry point, domain models).
 - **Contracts**: the interfaces sessions code against: types and protocols, navigation or routes, API and data schemas, events, stores, plus **mock or simulated implementations** so every session can run its part alone.
 - **Tests for the contracts.** They catch broken shared code once, instead of six times.
-- A **toolchain check**: build tools, SDKs, simulators or runtimes, services, all present. A missing tool discovered by six sessions at once is six blocked sessions.
+- A **toolchain check**: build tools, SDKs, simulators or runtimes, services, all present. A missing tool discovered by every session at once blocks all of them.
 
 Push the base, record its version, and name the coordinating session (for example "Main") so sessions can address it. Only then tell the owner to launch sessions.
 

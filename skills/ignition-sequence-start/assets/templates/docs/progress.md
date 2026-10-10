@@ -1,7 +1,7 @@
 # Progress
 
-<!-- engine-on: 0.1.0 -->
-Newest entries first. This is the handoff note for the next session or agent: keep it short.
+<!-- ignition-sequence-start: 0.2.0 -->
+Newest entries first. This is the handoff note for the next session or agent: keep it short. Replace the example comments when filling a field.
 
 ## Current status
 

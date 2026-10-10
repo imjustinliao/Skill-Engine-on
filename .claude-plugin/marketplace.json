@@ -1,20 +1,22 @@
 {
-  "name": "skill-engine-on",
+  "name": "skill-ignition-sequence-start",
   "owner": {
     "name": "Justin Liao",
     "url": "https://github.com/imjustinliao"
   },
   "metadata": {
-    "description": "Engine-on: start any project in a coding agent with a step-by-step intake, a durable docs system, smooth agent handoffs and contract-based parallel agents.",
-    "version": "0.1.0"
+    "description": "Ignition Sequence Start: set up any project for coding agents with a step-by-step intake, a durable docs system, automatic session handoffs and contract-based parallel agents.",
+    "version": "0.2.0"
   },
   "plugins": [
     {
-      "name": "engine-on",
-      "description": "Project kickoff, docs system, handoff and parallel-agent workflow for any coding agent.",
+      "name": "ignition-sequence-start",
+      "description": "Project setup, docs system, handoffs, status checks and parallel-agent workflow for any coding agent.",
       "source": "./",
       "strict": false,
-      "skills": ["./skills/engine-on"]
+      "skills": [
+        "./skills/ignition-sequence-start"
+      ]
     }
   ]
 }

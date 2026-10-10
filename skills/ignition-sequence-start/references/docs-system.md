@@ -27,7 +27,7 @@ Every file has one job. Together they let any agent, in any tool, start cold and
 
 ## Keeping them small
 
-Every session pays to read these files, so size is a cost. Budgets that held up in practice:
+Every session pays to read these files, so size is a cost. Suggested budgets:
 
 - `AGENTS.md` under ~150 lines. It holds rules, not knowledge.
 - `docs/progress.md` under ~200 lines: keep the ~15 latest decisions and ~10 latest session-log lines; move older ones to `docs/archive/` (create it when first needed).
@@ -41,14 +41,16 @@ When a file outgrows its budget, propose a prune to the owner in one line, then 
 
 `AGENTS.md` is the single source of rules. Other agents get a pointer, never a copy, so rules cannot drift apart:
 
-| Agent | What it reads | What to create |
-|-------|---------------|----------------|
-| Codex, Cursor, GitHub Copilot, Windsurf, Amp, OpenCode, Jules, Zed, Aider, and most others | `AGENTS.md` natively | nothing |
-| Claude Code | `CLAUDE.md`; recent versions also read `AGENTS.md`, but only when no `CLAUDE.md` exists | `CLAUDE.md` containing `@AGENTS.md` (works in every version, and leaves room for Claude-only notes) |
-| Gemini CLI | `GEMINI.md` by default | `GEMINI.md` containing `@AGENTS.md`, or `"context": {"fileName": ["AGENTS.md", "GEMINI.md"]}` in `.gemini/settings.json` |
-| Anything else | whatever it loads | a one-line pointer: "Follow AGENTS.md." |
+| Agent | Reads `AGENTS.md` | What to create |
+|-------|-------------------|----------------|
+| Codex, Cursor, GitHub Copilot, Grok Build, Windsurf/Devin, Amp, OpenCode, Cline, Roo Code, Kilo Code, Goose, Continue, OpenHands, Crush, Qwen Code, Kiro, JetBrains Junie, Factory Droid, Warp, Augment, Mistral Vibe, and most others | natively | nothing |
+| Claude Code | only when no `CLAUDE.md` exists | `CLAUDE.md` containing `@AGENTS.md` (created by default, `--no-claude` skips it; works in every version) |
+| Gemini CLI | when configured | `GEMINI.md` containing `@AGENTS.md` (`--gemini`), or `"context": {"fileName": ["AGENTS.md", "GEMINI.md"]}` in `.gemini/settings.json` |
+| Aider | when configured | `read: AGENTS.md` in `.aider.conf.yml` (`--aider`) |
+| Zed | yes, but only the first instruction file found (`.rules` and `.cursorrules` take precedence) | nothing; make sure no `.rules` file shadows `AGENTS.md` |
+| Anything else | varies | a one-line pointer in its own instruction file: "Read and follow AGENTS.md in the repository root." |
 
-Create only the pointers for agents the owner actually uses (ask in step 0). Some agents cap instruction files (Codex reads at most 32 KiB of `AGENTS.md` by default), another reason to keep it short. Agent support changes often; when unsure, check the agent's current docs instead of assuming.
+Create only the pointers for agents the owner uses (ask in step 0). Some agents cap instruction files (Codex reads at most 32 KiB of `AGENTS.md` by default), another reason to keep it short. Agent support changes often; when unsure, check the agent's current documentation instead of assuming.
 
 Personal, machine-specific preferences (local paths, a personal simulator, editor settings) do not belong in `AGENTS.md`. They go in the agent's local or user-level settings, which are not committed.
 
@@ -58,9 +60,9 @@ Personal, machine-specific preferences (local paths, a personal simulator, edito
 |-------|-------|
 | A new requirement or an owner decision about behavior | `docs/spec.md` (dated) |
 | A design change | `docs/design.md` › Design direction (rewritten in place) |
-| Why we chose X over Y | `docs/progress.md` › Decisions |
+| Why X was chosen over Y | `docs/progress.md` › Decisions |
 | "Please fix / change …" from a review | `docs/feedback.md` |
-| Something we wait on (backend, assets, accounts, legal) | `docs/progress.md` › External dependencies or Blockers |
+| Something the project waits on (backend, assets, accounts, legal) | `docs/progress.md` › External dependencies or Blockers |
 | A new rule for how agents work | `AGENTS.md` |
 | What happened this session | one line in `docs/progress.md` › Session log |
 | Facts learned from research | `docs/research.md` |
